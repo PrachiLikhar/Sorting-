@@ -1,0 +1,256 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: var(--bg-color);
+    color: var(--text-color);
+    text-align: center;
+}
+
+header {
+    background: var(--header-bg);
+    color: var(--header-text);
+    padding: 10px 0;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#theme {
+    border: none;
+    padding: 5px 3px;
+    border-radius: 5px;
+}
+
+header .logo {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+main {
+    padding: 20px;
+}
+
+h1 {
+    margin-top: 20px;
+    font-size: 3em;
+    animation: fadeInDown 1s ease-in-out;
+}
+
+p {
+    font-size: 1.2em;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button#startButton {
+    background: var(--button-start-bg);
+    color: var(--button-start-text);
+}
+
+button#generateButton,
+button#sortButton {
+    background: var(--button-generate-bg);
+    color: var(--button-generate-text);
+}
+
+button:hover {
+    background: var(--button-hover-bg);
+    color: var(--button-hover-text);
+}
+
+section.sort-container {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.controls label {
+    font-size: 1em;
+    margin-right: 5px;
+}
+
+.controls select,
+.controls input {
+    font-size: 1em;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.controls select:focus,
+.controls input:focus {
+    border-color: #2575fc;
+    box-shadow: 0 0 5px rgba(37, 117, 252, 0.5);
+}
+
+.bar-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 300px;
+    width: 80%;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.bar {
+    width: 20px;
+    margin: 0 2px;
+    background: var(--bar-bg);
+    transition: height 0.3s ease;
+    display: flex;
+    align-items: center;  /* Center vertically */
+    justify-content: center;  /* Center horizontally */
+    color: white;
+    font-size: 1em;  /* Increase font size */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);  /* Add text shadow */
+    padding: 7px;  /* Add some padding for better visibility */
+}
+
+
+footer {
+    background: var(--footer-bg);
+    color: var(--footer-text);
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    .bar-container {
+        width: 100%;
+    }
+
+    button {
+        width: 80%;
+    }
+
+    .controls {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .bar {
+        width: 15px;
+        margin: 0 1px;
+    }
+
+    .controls {
+        gap: 5px;
+    }
+
+    .controls label,
+    .controls select,
+    .controls input {
+        font-size: 0.9em;
+    }
+}
+
+/* Themes */
+body.default {
+    --bg-color: linear-gradient(to right, #ff7e5f, #feb47b);
+    --text-color: #333;
+    --header-bg: #ff7e5f;
+    --header-text: white;
+    --button-start-bg: #2575fc;
+    --button-start-text: white;
+    --button-generate-bg: #feb47b;
+    --button-generate-text: #333;
+    --button-hover-bg: #ff7e5f;
+    --button-hover-text: white;
+    --bar-bg: #2575fc;
+    --footer-bg: #ff7e5f;
+    --footer-text: white;
+}
+
+body.dark {
+    --bg-color: #333;
+    --text-color: #fff;
+    --header-bg: #444;
+    --header-text: #fff;
+    --button-start-bg: #555;
+    --button-start-text: #fff;
+    --button-generate-bg: #666;
+    --button-generate-text: #fff;
+    --button-hover-bg: #777;
+    --button-hover-text: #fff;
+    --bar-bg: #888;
+    --footer-bg: #444;
+    --footer-text: #fff;
+}
+
+body.light {
+    --bg-color: #fff;
+    --text-color: #333;
+    --header-bg: #ddd;
+    --header-text: #333;
+    --button-start-bg: #eee;
+    --button-start-text: #333;
+    --button-generate-bg: #fff;
+    --button-generate-text: #333;
+    --button-hover-bg: #ddd;
+    --button-hover-text: #333;
+    --bar-bg: #ccc;
+    --footer-bg: #ddd;
+    --footer-text: #333;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SortMaster</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="default">
+    <header>
+        <nav>
+            <div class="logo">SortMaster</div>
+            <div class="theme-selector">
+                <select id="theme">
+                    <option value="default">Default</option>
+                    <option value="dark">Dark</option>
+                    <option value="light">Light</option>
+                </select>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <h1>Welcome to SortMaster</h1>
+        <p>Your ultimate sorting solution</p>
+        <section class="intro">
+            <h2>Get Started with Sorting</h2>
+            <button id="startButton">Start Sorting</button>
+        </section>
+        <section class="sort-container" id="sortContainer">
+            <h2>Sorting Visualization</h2>
+            <div class="controls">
+                <label for="algorithm">Choose Algorithm:</label>
+                <select id="algorithm">
+                    <option value="bubbleSort">Bubble Sort</option>
+                    <option value="selectionSort">Selection Sort</option>
+                    <option value="insertionSort">Insertion Sort</option>
+                    <option value="mergeSort">Merge Sort</option>
+                    <option value="quickSort">Quick Sort</option>
+                </select>
+                <label for="arraySize">Array Size:</label>
+                <input type="number" id="arraySize" min="5" max="100" value="20">
+                <button id="generateButton">Generate Array</button>
+                <button id="sortButton">Sort Now</button>
+            </div>
+            <div class="bar-container" id="barContainer"></div>
+            <div class="algorithm-info" id="algorithmInfo"></div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 SortMaster. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
